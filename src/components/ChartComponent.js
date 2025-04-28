@@ -11,19 +11,17 @@ import {
   Legend
 } from 'chart.js';
 
-ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+);
 
-const ChartComponent = () => {
-  const data = {
-    labels: ['January', 'February', 'March', 'April', 'May', 'June'],
-    datasets: [{
-      label: 'Sample Data',
-      data: [65, 59, 80, 81, 56, 55],
-      fill: false,
-      borderColor: 'rgb(75, 192, 192)',
-    }],
-  };
-
+const ChartComponent = ({ data }) => {
   return (
     <div style={{ maxWidth: '600px', margin: 'auto' }}>
       <Line data={data} />
